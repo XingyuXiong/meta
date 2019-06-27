@@ -18,4 +18,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^/api/main/like', 'meta.views.api1', name='api1'),
+    url(r'^/api/main/get_pic', 'meta.views.api2', name='api2')
 ]

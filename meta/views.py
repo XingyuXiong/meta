@@ -1,4 +1,4 @@
-from django import HttpResponse
+from django.http import JsonResponse
 from django.views.decorators.http import require_GET, require_POST
 from django.views.generic import TemplateView
 
@@ -23,6 +23,7 @@ def api1()
     return ok({})
 
 
+@require_POST
 def api2()
     pics=[]
     page=request.args['page']
@@ -30,3 +31,4 @@ def api2()
     for id in id_list[]:
         objects.append(get_object(Pic,id).to_dict())
     return ok(objects)
+
